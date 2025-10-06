@@ -104,3 +104,149 @@
 
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// 5.   Boolean
+
+// -> used to represent two values: true or false
+// -> used in conditional statements and logical operations
+
+// let isLoggedIn = false
+// console.log("Is Logged In: ", isLoggedIn)             // Is Logged In:  false
+// console.log(typeof isLoggedIn)                        // boolean
+
+// isLoggedIn = true
+// console.log("Is Logged In after update: ", isLoggedIn) // Is Logged In after update:  true
+// console.log(typeof isLoggedIn)                        // boolean
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// 6. Null
+
+// -> intentinally making the value as absent
+
+// let salary = null
+// console.log(salary)                 // null
+// console.log(typeof salary)          // object (this is a bug in javascript, typeof null should be null but it returns object)
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// 7. Object
+
+//  -> used to store multiple values in a single variable
+//  -> key-value pairs
+//  -> non-premitive data type
+
+//  creating an object
+
+//  let trainTicketBooking = {
+//     passengerName : "Keerthi",
+//     travalDate : "10-1-2030",
+//     source : "bnglr",
+//     destination : "kannur",
+//     bookingStatus : true,
+//     insurance : "yes",
+//     coach : 3,
+//     seatNumber: 64,
+//     contact : {
+//         phoneNumber : 77456678,
+//         email : "test@gmail.com"
+//     }
+//  }
+
+
+//  accessing object properties
+
+//  console.log(trainTicketBooking)            
+// output:
+//  {
+//   passengerName: 'Keerthi',
+//   travalDate: '10-1-2030',
+//   source: 'bnglr',
+//   destination: 'kannur',
+//   bookingStatus: true,
+//   insurance: 'yes',
+//   coach: 3,
+//   seatNumber: 64,
+//   contact: { phoneNumber: 77456678, email: 'test@gmail.com' }
+// }
+                                                                 
+//  console.log(typeof trainTicketBooking)         //object
+
+ // printing details
+
+//  console.log(`passenger name: ${trainTicketBooking["passengerName"]}`)      //passenger name: Keerthi
+//  console.log(`passenger name: ${trainTicketBooking.travalDate}`)            //passenger name: 10-1-2030
+//  console.log("passanger contact: ", trainTicketBooking.contact)             //passanger contact:  { phoneNumber: 77456678, email: 'test@gmail.com' }
+//  console.log("phone number: ", trainTicketBooking.contact.phoneNumber)      //phone number:  77456678
+
+ // modifing the object
+
+//  trainTicketBooking.seatNumber = 78
+//  console.log(trainTicketBooking) 
+//  console.log(" new seatnumber is : ", trainTicketBooking.seatNumber)
+
+ // adding new property
+
+//  trainTicketBooking.fooofOrder = false
+//  console.log(trainTicketBooking)
+
+ // deleting property
+
+//  delete trainTicketBooking.insurance
+//  console.log(trainTicketBooking)
+
+
+// const object 
+// 
+
+//  const trainTicket = {
+//     passengerName : "Keerthi",
+//     travalDate : "10-1-2030",
+//     source : "bnglr",
+//     destination : "kannur",
+//     bookingStatus : true,
+//     insurance : "yes",
+//     coach : 3,
+//     seatNumber: 64,
+//     contact : {
+//         phoneNumber : 77456678,
+//         email : "test@gmail.com"
+//     }
+//  }
+
+//  trainTicket.passengerName = "keeerthanaa gowdaa"
+//  console.log(trainTicket)
+
+//  {
+//   passengerName: 'keeerthanaa gowdaa',
+//   travalDate: '10-1-2030',
+//   source: 'bnglr',
+//   destination: 'kannur',
+//   bookingStatus: true,
+//   insurance: 'yes',
+//   coach: 3,
+//   seatNumber: 64,
+//   contact: { phoneNumber: 77456678, email: 'test@gmail.com' }
+// }
+
+// we can change the property
+
+// print object in table format
+// console.table(trainTicketBooking)
+
+// ┌───────────────┬─────────────┬──────────────────┬─────────────┐
+// │ (index)       │ phoneNumber │ email            │ Values      │
+// ├───────────────┼─────────────┼──────────────────┼─────────────┤
+// │ passengerName │             │                  │ 'Keerthi'   │
+// │ travalDate    │             │                  │ '10-1-2030' │
+// │ source        │             │                  │ 'bnglr'     │
+// │ destination   │             │                  │ 'kannur'    │
+// │ bookingStatus │             │                  │ true        │
+// │ insurance     │             │                  │ 'yes'       │
+// │ coach         │             │                  │ 3           │
+// │ seatNumber    │             │                  │ 64          │
+// │ contact       │ 77456678    │ 'test@gmail.com' │             │
+// └───────────────┴─────────────┴──────────────────┴─────────────┘
+
+//-----------------------------------------------------------------------------------
+
