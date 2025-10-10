@@ -9,7 +9,7 @@
 // 2. Anonymous Functions
 // 3. Arrow Functions
 // 4. Built in Function
-// 5. IIFE (Immediately invoked functions )
+// 5. IIFE (Immediately invoked functions)
 // 6. higher oreder ordered functions
 // 7. call bask functions
 
@@ -21,7 +21,7 @@
 
 // syntax:
 
-// // function call ( we can call function after the fun defenition and also we can call the func befor func defenition)
+// // function call : we can call function after the fun defenition and also we can call the func befor func defenition
 // functionName()
 
 // // function defenition
@@ -31,10 +31,11 @@
 //     console.log("hello im func")
 // }
 
-// // function call ( we can call function after the fun defenition and also we can call the func befor func defenition)
+// // function call : we can call function after the fun defenition and also we can call the func befor func defenition
 // functionName()
 
 // example 
+
 // const prompt = require("prompt-sync")({sigint:String})
 // function notification (name){
 //     console.log(" hi: ",name)
@@ -48,7 +49,6 @@
 
 // function math(a,b){
 //     function add(){ 
-
 //         console.log("Sum: ", a+b)
 //     }
 //     function mul(){
@@ -85,6 +85,7 @@
 //-------------------------------------------------------------------------------
 
 // 2. Anonymous Functions
+
 // function without a name is known as anonymous function
 // usually we assign anonymous function to a variable
 
@@ -123,9 +124,11 @@
 
 // greet("Alice")
 // greet("Bob")
+
 //-------------------------------------------------------------------------------
 
 // 4. Built in Function
+
 // JavaScript provides several built-in functions that you can use directly without defining them yourself.
 // Examples of built-in functions include:
 // parseInt(), parseFloat(), isNaN(), isFinite(), eval(), encodeURI(), decodeURI(), setTimeout(), setInterval(), clearTimeout(), clearInterval(), etc.
