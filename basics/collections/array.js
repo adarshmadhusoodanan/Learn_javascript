@@ -339,3 +339,19 @@
 
 // console.log(finalRes)
 //-------------------------------------------------------------------------------
+
+
+// Destructuring: It is technique in JS to assign value of an collection into an distinct variable by unpacking collection.
+
+let cart = [
+    "Mobile", "Charger", "Laptop","PowerBank","Airpods","Tshirt"
+]
+console.log(cart[0])   //Mobile
+
+let [item1, item2, item3, ...leftitem] = cart   // unpacking
+
+console.log(item1)          //Mobile
+console.log(item2)          //Charger
+console.log(item3)          //Laptop
+
+console.log(leftitem)  //[ 'PowerBank', 'Airpods', 'Tshirt' ]

@@ -99,7 +99,7 @@
 // console.log(fname.padStart())
 
 //  12. padEnd()
-const prompt = require("prompt-sync")({sigint:true})
+// const prompt = require("prompt-sync")({sigint:true})
 
 
 // let email = prompt("enter your email : ")
@@ -129,8 +129,8 @@ const prompt = require("prompt-sync")({sigint:true})
 
 // returns the index number of first occurance given character
 
-let city = "bangalore"
-console.log("index of first a: ", city.indexOf("a"))  // 1
+// let city = "bangalore"
+// console.log("index of first a: ", city.indexOf("a"))  // 1
 
 
 // 14. lastIndexof(char)
@@ -148,12 +148,29 @@ console.log("index of first a: ", city.indexOf("a"))  // 1
 // console.log(city.charCodeAt(6))  //111
 
 
-//
+//String.fromCharCode()
 
-res= ''
-for (let i=97; i<=97+25; i++){
+// res= ''
+// for (let i=97; i<=97+25; i++){
     
-    res += " "+ String.fromCharCode(i)
+//     res += " "+ String.fromCharCode(i)
 
-}
-console.log(res)  // a b c d e f g h i j k l m n o p q r s t u v w x y z
+// }
+// console.log(res)  // a b c d e f g h i j k l m n o p q r s t u v w x y z
+
+
+// 17. startWith()
+
+
+// 18. endWith()
+
+// 19. includes()
+// check weather given sting is included in original string or not. returns boolean.
+
+// console.log()
+
+
+
+
+
+
