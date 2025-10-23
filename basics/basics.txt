@@ -1,0 +1,150 @@
+1.Variable - var,let,const
+2. Data types - String,Number,BigInt,Boolean,Undefined,Null,Object.
+3.Operations - Arithmetic, Assignment, Comparision, Logical.
+4.Conditions - if, if-else, else-if, Nested if, switch case.
+5.Loops - for, for in, for of, while, do while, map(),forEach().
+6. Functions - Named, Anonymous, Arrow, Built-in, IIFE, Higher Ordered, callback
+7. Pure and Impure Functions
+
+8. collections
+    a. String
+    b. Array
+    c. Object
+
+9. Methods:
+    a. Math
+    b. Number
+    c. Date
+    d. JSON
+
+----------------------------------------------------------------------------------
+
+1. Variable - var, let, const
+   - var: function-scoped, can be redeclared and updated.
+   - let: block-scoped, can be updated but not redeclared in the same scope.
+   - const: block-scoped, cannot be updated or redeclared.
+
+2. Data types - String,Number,BigInt,Boolean,Undefined,Null,Object.
+   - String: "Hello"
+   - Number: 42
+   - BigInt: 12345678901234567890n
+   - Boolean: true, false
+   - Undefined: let x;
+   - Null: let y = null;
+   - Object: {name: "Alice", age: 25}
+
+3. Operators - Arithmatic, Assignment, Comparision, Logical.
+   - Arithmetic: +, -, *, /, %, **, ++, --
+   - Assignment: =, +=, -=, *=, /=
+   - Comparison: ==, ===, !=, !==, >, <, >=, <=, ?
+   - Logical: &&, ||, !
+
+4. Conditions - if, if-else, else-if, Nested if, switch case.
+   - if (x > 0) {...}
+   - if (x > 0) {...} else {...}
+   - if (x > 0) {...} else if (x < 0) {...} else {...}
+   - if (x > 0) { if (y > 0) {...} }
+   - switch(x) { case 1: ...; break; default: ...; }
+
+5. Loops - for, for in, for of, while, do-while,map(),forEach().
+   - for (let i = 0; i < 5; i++) {...}
+   - for (let key in obj) {...}
+   - for (let val of arr) {...}
+   - while (i < 5) {...}
+   - do {...} while (i < 5);
+   - arr.map(x => x * 2)
+   - arr.forEach(x => console.log(x))
+
+6. Functions - Named, Anonymous, Arrow, Built-in, IIFE, Higher Ordered, CallBack.
+   - Named: function add(a, b) { return a + b; }
+   - Anonymous: let sum = function(a, b) { return a + b; }
+   - Arrow: let sum = (a, b) => a + b;
+   - Built-in: parseInt("10"), alert("Hi")
+   - IIFE: (function(){ ... })();
+   - Higher Ordered: function apply(fn, x) { return fn(x); }
+   - CallBack: setTimeout(() => {...}, 1000);
+
+7. Pure and impure function.
+   - Pure: function add(a, b) { return a + b; }
+   - Impure: function addToArr(arr, x) { arr.push(x); }
+
+8. Collection:
+    a. String - "Hello World"
+       - Methods: length, toUpperCase(), slice(), split(), includes(), replace(),toLowerCase(),concat(),trim(),
+                  trimStart(),trimEnd(),padStart(),padEnd(),indexof(char),lastIndexof(char),charAt(index),
+                  charCodeAt(index),startWith(),endWith(),
+    b. Array - [1, 2, 3, 4]
+       - Methods: push(), pop(), map(), filter(), reduce(), find(), sort(),toString(),shift(),unshift(),join(separator),
+                  slice(start,end),concat(),slice(),splice(),reverse(),fill(),flat(),forEach(),every(),some()
+    c. Object - {name: "Bob", age: 30}
+       - Access: obj.name, obj["age"], Object.keys(obj), Object.values(obj)
+
+9. Methods:
+    a. Math - Math.round(4.6), Math.max(1, 5), Math.random(), Math.floor(2.9), Math.abs(-7)
+    b. Number - (123).toString(), Number.parseInt("10"), Number.isNaN(NaN),   Number.toFixed(2)
+    c. Date - new Date(), date.getFullYear(),
+    d. JSON - JSON.stringify(obj), JSON.parse(str), JSON.stringify([1,2,3])1. Variable - var, let, const
+   - var: function-scoped, can be redeclared and updated.
+   - let: block-scoped, can be updated but not redeclared in the same scope.
+   - const: block-scoped, cannot be updated or redeclared.
+
+2. Data types - String,Number,BigInt,Boolean,Undefined,Null,Object.
+   - String: "Hello"
+   - Number: 42
+   - BigInt: 12345678901234567890n
+   - Boolean: true, false
+   - Undefined: let x;
+   - Null: let y = null;
+   - Object: {name: "Alice", age: 25}
+
+3. Operators - Arithmatic, Assignment, Comparision, Logical.
+   - Arithmetic: +, -, *, /, %, **, ++, --
+   - Assignment: =, +=, -=, *=, /=
+   - Comparison: ==, ===, !=, !==, >, <, >=, <=, ?
+   - Logical: &&, ||, !
+
+4. Conditions - if, if-else, else-if, Nested if, switch case.
+   - if (x > 0) {...}
+   - if (x > 0) {...} else {...}
+   - if (x > 0) {...} else if (x < 0) {...} else {...}
+   - if (x > 0) { if (y > 0) {...} }
+   - switch(x) { case 1: ...; break; default: ...; }
+
+5. Loops - for, for in, for of, while, do-while,map(),forEach().
+   - for (let i = 0; i < 5; i++) {...}
+   - for (let key in obj) {...}
+   - for (let val of arr) {...}
+   - while (i < 5) {...}
+   - do {...} while (i < 5);
+   - arr.map(x => x * 2)
+   - arr.forEach(x => console.log(x))
+
+6. Functions - Named, Anonymous, Arrow, Built-in, IIFE, Higher Ordered, CallBack.
+   - Named: function add(a, b) { return a + b; }
+   - Anonymous: let sum = function(a, b) { return a + b; }
+   - Arrow: let sum = (a, b) => a + b;
+   - Built-in: parseInt("10"), alert("Hi")
+   - IIFE: (function(){ ... })();
+   - Higher Ordered: function apply(fn, x) { return fn(x); }
+   - CallBack: setTimeout(() => {...}, 1000);
+
+7. Pure and impure function.
+   - Pure: function add(a, b) { return a + b; }
+   - Impure: function addToArr(arr, x) { arr.push(x); }
+
+8. Collection:
+    a. String - "Hello World"
+       - Methods: length, toUpperCase(), slice(), split(), includes(), replace(),toLowerCase(),concat(),trim(),
+                  trimStart(),trimEnd(),padStart(),padEnd(),indexof(char),lastIndexof(char),charAt(index),
+                  charCodeAt(index),startWith(),endWith(),
+    b. Array - [1, 2, 3, 4]
+       - Methods: push(), pop(), map(), filter(), reduce(), find(), sort(),toString(),shift(),unshift(),join(separator),
+                  slice(start,end),concat(),slice(),splice(),reverse(),fill(),flat(),forEach(),every(),some()
+    c. Object - {name: "Bob", age: 30}
+       - Access: obj.name, obj["age"], Object.keys(obj), Object.values(obj)
+
+9. Methods:
+    a. Math - Math.round(4.6), Math.max(1, 5), Math.random(), Math.floor(2.9), Math.abs(-7)
+    b. Number - (123).toString(), Number.parseInt("10"), Number.isNaN(NaN),   Number.toFixed(2)
+    c. Date - new Date(), date.getFullYear(),
+    d. JSON - JSON.stringify(obj), JSON.parse(str), JSON.stringify([1,2,3])

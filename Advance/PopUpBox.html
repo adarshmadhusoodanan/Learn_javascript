@@ -1,0 +1,89 @@
+<!-- popUpBox.html -->
+
+<!-- 
+1. alert() - Displays a message to the user.
+    syntax: 
+        window.alert("message");
+2. confirm() - Displays a dialog with a message and OK/Cancel buttons.
+
+3. prompt() - Displays a dialog with a message and an input field for user input.
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PopUpBox</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+
+            gap: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 10px;
+            cursor: pointer;
+            width: 100px;
+        }
+        svg {
+            width: 24px;
+            height: 24px;
+            fill: red;
+        }
+        </style>
+</head>
+<body>
+
+    <!-- ALERT -->
+    <button onclick="greet()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+  <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+</svg>
+    </button>
+
+    <!-- CONFIRM -->
+    <button onclick="saveUserData()">
+        <h2>SAVE</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+  <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2"/>
+</svg>
+    </button>
+
+    <h1 id="res"></h1>
+
+    <script>
+        // ALERT
+        function greet(){
+            window.alert("Welcome to Javascript advance");  // not possible to display array and object we need to convert it into string(unpacked form)
+        }
+
+        // CONFIRM
+        const saveUserData = () => {
+            const isConfirmed = window.confirm("Do you want to save the data?");
+            console.log(isConfirmed);  // true or false
+            let decision
+            if(isConfirmed){
+                console.log("Data saved successfully");
+                decision = "Data saved successfully";
+            } else {
+                console.log("Data not saved");
+                decision = "Data not saved";
+            }
+            document.getElementById("res").textContent = decision;
+        }
+
+        // prompt
+
+        
+    </script>
+</body>
+</html>
