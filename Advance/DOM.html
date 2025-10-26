@@ -1,0 +1,143 @@
+<!-- DOM 
+
+ - it is an programming interface for html 
+ - it represent html doc into heirarchial way so that developer can easily slide through doc 
+ - define an way in which html elements are accessed and manipulated 
+ - accessing and manipulating elements by using its tag,id,class and many attributes, using command and methods provided by DOM
+
+structure of DOM
+
+- it can be a tree structure 
+- contains branches and nodes
+- nodes are connected with branches and always nodes ends with object
+
+            document
+                |
+              html  -> node
+                |   -> branch
+        |-------------------------|
+       head                      body 
+        |                         |
+    |-----------------|        |----------|---------|------------|
+  meta              title      h1       button     div         script 
+
+
+DOM Commands
+
+- getElementById()
+- getElementsByClassName()
+- getElementsByTagName()
+- getElementsByName()
+- querySelector()
+- querySelectorAll()
+
+       1. getElementById()
+
+    -> access and manipulating element by using in id attribute
+    -> it can fetch only one element at a time
+    -> teturn element if id is matching else returns null
+
+    SYNTAX:
+      ____ = document.getElementById("id")
+
+
+
+       2. getElementByClassName()
+
+    -> accessing and manupulataing html elements by using 'class' attribute
+    -> Returns all matching class names as a node list(array)
+    -> if class name is matching returns empty array
+
+    SYNTAX:
+     ______ = document.getElementByClassName("class")
+
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>Document Object Model</h1>
+    <hr>
+    <br>
+    <button onclick="changeTitle()">change Title</button>
+    <br>
+    <div id="text"> this is dom getElementById TEST</div>
+    <br>
+    <hr>
+    
+    <h1 id="head-text">This is content inside the tag h1</h1>
+    <button onclick="fetchText()">click here to see the result</button>
+    <strong id="result"></strong>
+    <hr>
+    <br>
+    <button onclick="addTag()">click here to see new tag</button>
+    <div id="wrapper"></div>
+    <br>
+    <hr>
+    <input type="text" name="" id="userInp" placeholder="start typing">
+    <button onclick="userInput()">click here to see the entered name</button>
+    <p>Entered name: <strong id="uname"></strong></p>
+
+    <script>
+
+        // changing the title dynamically
+        function changeTitle(){
+            document.title = "Document Object Model"
+        }
+
+        // fetching the div content bu using the id
+        let result = document.getElementById("text")
+        console.log(result)
+
+        //fetch the h1 content and change to uppercase and print on web
+
+        function fetchText(){
+            headEle = document.getElementById("head-text")
+            resutEle =document.getElementById("result")
+
+            console.log(headEle)                //<h1 id="head-text">This is content inside the tag h1</h1>
+            console.log(headEle.textContent)   //This is content inside the tag h1
+
+            resutEle.textContent = headEle.textContent.toUpperCase()  //THIS IS CONTENT INSIDE THE TAG H1
+            
+        }
+
+        // we can pass new element to the web by js
+
+        function addTag(){
+
+            const wrapperEle = document.getElementById("wrapper")
+
+            wrapperEle.innerText = "<strong> from JS </strong> <br> <strong> this is strong</strong>"  //<strong> from JS </strong> <br> <strong> this is strong</strong>
+            wrapperEle.innerHTML += "<strong> from JS </strong> <br> <strong> this is strong</strong>"  //from JS
+                                                                                                        //this is strong
+
+            // here the innerText and innerHTML is differed by the content display.
+
+            wrapperEle.innerHTML += `<h5>${2+10}</h5>`      // 12
+
+            wrapperEle.innerHTML += `<img src="" alt="no image">`
+
+        }
+
+        // value -> fetch and return value form html to JS and vice versa
+
+        function userInput(){
+
+            const userInputEle = document.getElementById("userInp")
+            console.log(userInputEle)
+            console.log(userInputEle.value)
+
+            document.getElementById("uname").textContent = userInputEle.value
+
+        }
+        
+    </script>
+</body>
+</html>
