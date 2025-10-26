@@ -1,0 +1,313 @@
+<!-- 
+ event Handling
+
+- changing the state of an object is known as event
+- when Js is loaded into html, Js will start reacting over the events and allows the execution this process is known as event Handling
+- JS will handels this events via event handels
+
+types
+
+-> Mouse event
+-> Keyboard 
+-> Focus
+-> Form 
+-> Windows  
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handlers</title>
+
+    <style>
+        body{
+            display: inline-block;
+        }
+
+        input{
+            position: relative;
+            width: 300px;
+            height: 50px;
+
+        }
+        .newProp {
+            border: 1.5px red solid;
+            border-radius: 10px;
+            outline: none;
+            animation: shake 100ms ease-in-out alternate 5;
+        }
+
+        @keyframes shake {
+            from{
+                transform: translate(-20px);
+            }
+            to{
+                transform: translate(20px);
+            }
+            
+        }
+        #formdiv{
+            height: 500px;
+        }
+
+        form{
+            position: absolute;
+            /* top: 50%;
+            left: 50%; */
+
+            width: 400px;
+            height: 400px;
+            display: flex;
+        }
+
+        fieldset{
+            display: inline-block;
+            padding: 40px 40px;
+
+        }
+
+        #text{
+            width: 600px;
+            height: 500px;
+            
+            padding: 20px;
+            border: 1.5px black solid;
+            overflow: scroll;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- Mouse Event -->
+    <h1>Mouse Event</h1>
+    <h1 onclick="changeContent()" ondblclick="changeContent2()">Click Here </h1>
+    <script>
+        const changeContent = ()=>{
+            document.querySelector("h1").textContent = "Clicked"
+        }
+
+        const changeContent2 = () => {
+            document.querySelector("h1").style.color = "red"
+        }
+    </script>
+
+    <hr>
+    <!-- curser over the image it should change -->
+    <!-- https://i.pinimg.com/736x/03/11/83/031183f5a7517a81aa4c781bc7deb010.jpg -->
+
+    <!-- <img src="https://i.pinimg.com/236x/1d/f1/43/1df143603c7a9f51f3e8348f0ede6277.jpg" width="400px" height="400px" alt="" onmouseover="changeImg()">
+    <script>
+
+        function changeImg () {
+            document.querySelector("img").src = "https://i.pinimg.com/736x/03/11/83/031183f5a7517a81aa4c781bc7deb010.jpg"
+        }
+    </script> -->
+
+    <!-- another way -->
+
+    <img src="https://i.pinimg.com/236x/1d/f1/43/1df143603c7a9f51f3e8348f0ede6277.jpg" width="400px" height="400px" alt="" onmouseenter="" onmouseout=""> 
+    <script>
+
+        // function changeImg () {
+        //     document.querySelector("img").src = "https://i.pinimg.com/736x/03/11/83/031183f5a7517a81aa4c781bc7deb010.jpg"
+        // }
+
+        const imgEle = document.querySelector("img")
+
+        imgEle.onmouseenter = () => {
+            imgEle.src = "https://i.pinimg.com/736x/03/11/83/031183f5a7517a81aa4c781bc7deb010.jpg"
+        }
+        imgEle.onmouseout = () =>{
+            imgEle.src = "https://i.pinimg.com/236x/1d/f1/43/1df143603c7a9f51f3e8348f0ede6277.jpg"
+        }
+        
+    </script>
+
+    <hr>
+    <!-- Keyboard event -->
+    <h1>Keyboard event</h1>
+    <input type="text" placeholder="start typing...">
+    <h1>you entered: <span id="result"></span></h1>
+    <script>
+        const inpEle = document.querySelector("input[type='text']")
+
+        inpEle.onkeydown = function(){
+            document.getElementById("result").textContent = inpEle.value
+
+        }
+    </script>
+
+    <hr>
+
+    <textarea name="" id="" rows="10" cols="40" maxlength="150"></textarea>
+
+    <p>Remaining character: <span id="res"></span></p>
+
+    <script>
+        const textArea = document.querySelector("textarea")
+        let count = 0
+        textArea.onkeyup = function(){
+            count++
+            if (count>150){
+                document.getElementById("res").textContent = `is more that 150. it should be maximum 150. now it is ${count}`
+            }
+            else{
+                document.getElementById("res").textContent = ` ${150-count}`
+            }
+        }
+    </script>
+
+    <hr>
+
+    <input type="text" id="inp">
+    <hr>
+
+    <script>
+        const userInpEle = document.getElementById("inp")
+        userInpEle.onkeypress = function (event){
+            alert(event.key)
+        }
+    </script>
+
+    <!-- Focus event -->
+     <h1>Focus event</h1>
+     <input type="text" id="inp2">
+
+     <script>
+        const userInpTwo = document.getElementById("inp2")
+        userInpTwo.addEventListener("focus", () =>{
+            // Adding class
+            // Syntax:  element.ClassList.add("className")
+
+            userInpTwo.classList.add("newProp")
+            // console.log("heyyy it is working")
+        })
+
+        userInpTwo.addEventListener("blur", ()=>{
+            userInpTwo.classList.remove("newProp")
+        })
+     </script>
+
+     <!-- Form Event -->
+     <hr>
+     <h1>Form Event</h1>
+     <div id="formdiv">
+        <form action="">
+        <fieldset>
+            <legend>
+                <h1>Login</h1>
+            </legend>
+
+            <input type="text" id="uName" placeholder="username" oninput="userCred()">
+            <input type="password" id="uPass" placeholder="password">
+            <input type="submit" value="Login">
+            <input type="button" value="Cancel">
+            <label for="">roles</label>
+            <select name="" id="roles" onchange="findRoles()">
+                <option value="">---chosen--</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+            </select>
+        </fieldset>
+        
+     </form>
+     </div><br>
+     
+
+     <script>
+
+        document.querySelector("form").onsubmit = function (Event){
+            window.location.href = "https://www.google.com"
+            event.preventDefault()
+        }
+
+        function userCred (){
+            let username = document.getElementById("uName")
+            username.value = username.value.toUpperCase()
+            // let password = document.getElementById("uPass").value
+
+            console.log(username)
+
+        }
+
+        function findRoles(){
+            let roles = document.getElementById("roles")
+
+            console.log(roles.value)
+        }
+     </script>
+     <hr>
+
+    <!-- window event -->
+     <!-- onload -->
+      <h1>Window event</h1>
+      
+
+     <!-- <script>
+
+        document.body.onload = function(){
+            alert("page loading.......")
+        }
+     </script> -->
+
+     <!-- onscroll -->
+<br>
+     <div id="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, totam minus! Fugiat est ut natus neque officia asperiores repudiandae qui in veritatis nostrum. Incidunt natus sapiente, pariatur velit quod reiciendis?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero reprehenderit necessitatibus numquam totam. Saepe doloremque labore illum! Nostrum consequuntur, earum fugiat iusto reprehenderit aliquid, quod nihil ea dicta quam mollitia.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo, natus tempore neque placeat deleniti dicta sit ab quisquam perspiciatis similique, dolores dignissimos non repudiandae quis officiis accusamus cupiditate. Praesentium placeat debitis nisi. Dolorem dolor maxime commodi iste doloremque velit, cum alias aspernatur perspiciatis cupiditate doloribus rem odio vel unde soluta?
+     
+     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, totam minus! Fugiat est ut natus neque officia asperiores repudiandae qui in veritatis nostrum. Incidunt natus sapiente, pariatur velit quod reiciendis?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero reprehenderit necessitatibus numquam totam. Saepe doloremque labore illum! Nostrum consequuntur, earum fugiat iusto reprehenderit aliquid, quod nihil ea dicta quam mollitia.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo, natus tempore neque placeat deleniti dicta sit ab quisquam perspiciatis similique, dolores dignissimos non repudiandae quis officiis accusamus cupiditate. Praesentium placeat debitis nisi. Dolorem dolor maxime commodi iste doloremque velit, cum alias aspernatur perspiciatis cupiditate doloribus rem odio vel unde soluta?
+     
+     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, totam minus! Fugiat est ut natus neque officia asperiores repudiandae qui in veritatis nostrum. Incidunt natus sapiente, pariatur velit quod reiciendis?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero reprehenderit necessitatibus numquam totam. Saepe doloremque labore illum! Nostrum consequuntur, earum fugiat iusto reprehenderit aliquid, quod nihil ea dicta quam mollitia.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo, natus tempore neque placeat deleniti dicta sit ab quisquam perspiciatis similique, dolores dignissimos non repudiandae quis officiis accusamus cupiditate. Praesentium placeat debitis nisi. Dolorem dolor maxime commodi iste doloremque velit, cum alias aspernatur perspiciatis cupiditate doloribus rem odio vel unde soluta?
+     
+     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, totam minus! Fugiat est ut natus neque officia asperiores repudiandae qui in veritatis nostrum. Incidunt natus sapiente, pariatur velit quod reiciendis?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero reprehenderit necessitatibus numquam totam. Saepe doloremque labore illum! Nostrum consequuntur, earum fugiat iusto reprehenderit aliquid, quod nihil ea dicta quam mollitia.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo, natus tempore neque placeat deleniti dicta sit ab quisquam perspiciatis similique, dolores dignissimos non repudiandae quis officiis accusamus cupiditate. Praesentium placeat debitis nisi. Dolorem dolor maxime commodi iste doloremque velit, cum alias aspernatur perspiciatis cupiditate doloribus rem odio vel unde soluta?
+     
+     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, totam minus! Fugiat est ut natus neque officia asperiores repudiandae qui in veritatis nostrum. Incidunt natus sapiente, pariatur velit quod reiciendis?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero reprehenderit necessitatibus numquam totam. Saepe doloremque labore illum! Nostrum consequuntur, earum fugiat iusto reprehenderit aliquid, quod nihil ea dicta quam mollitia.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo, natus tempore neque placeat deleniti dicta sit ab quisquam perspiciatis similique, dolores dignissimos non repudiandae quis officiis accusamus cupiditate. Praesentium placeat debitis nisi. Dolorem dolor maxime commodi iste doloremque velit, cum alias aspernatur perspiciatis cupiditate doloribus rem odio vel unde soluta?
+     
+     Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, totam minus! Fugiat est ut natus neque officia asperiores repudiandae qui in veritatis nostrum. Incidunt natus sapiente, pariatur velit quod reiciendis?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero reprehenderit necessitatibus numquam totam. Saepe doloremque labore illum! Nostrum consequuntur, earum fugiat iusto reprehenderit aliquid, quod nihil ea dicta quam mollitia.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo, natus tempore neque placeat deleniti dicta sit ab quisquam perspiciatis similique, dolores dignissimos non repudiandae quis officiis accusamus cupiditate. Praesentium placeat debitis nisi. Dolorem dolor maxime commodi iste doloremque velit, cum alias aspernatur perspiciatis cupiditate doloribus rem odio vel unde soluta?
+     </div>
+
+     <p>total scroll:  <strong id="scroll"></strong></p>
+
+     <script>
+        const textEle = document.getElementById("text")
+
+        let scrollCount = 0
+        textEle.onscroll = () =>{
+            document.getElementById("scroll").textContent = ++count
+        }
+
+     </script>
+
+     <h2 id="resolution">Resolution</h2>
+
+
+     <!-- onresize -->
+     <script>
+        document.body.onresize = function(){
+            let height = window.innerHeight
+            let width = window.innerWidth
+
+            document.getElementById("resolution").textContent = `${width} x ${height}`
+        }
+     </script>
+
+
+
+
+    <hr>
+</body>
+</html>
