@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector</title>
+</head>
+<body>
+    <div id="first">
+        <h1 id="textOne">this is first one</h1>
+        <h1>this is first one</h1>
+        <h1>this is first one</h1>
+        <h1>this is first one</h1>
+
+    </div>
+    <div id="second">
+        <h1 class="text">this is second</h1>
+        <h1 class="text">this is second</h1>
+        <h1 class="text">this is second</h1>
+        <h1 class="text">this is second</h1>
+    </div>
+    <button onclick="selectFirstElement()">quearySelector</button>
+    <button onclick="selectAllElements()">quearySelectorAll</button>
+
+    <script>
+        //querySelector()
+        function selectFirstElement(){
+            const firstEle = document.getElementById("second").querySelector(".text")
+            console.log(firstEle)
+            firstEle.style.color = 'red'
+
+            const firstOneEle = document.getElementById("first").querySelector("#textOne")
+            console.log(firstOneEle)
+            firstOneEle.style.color = 'blue'
+
+            // selecting element using combinator
+            const combinatorResult = document.getElementById("second").querySelector("#second>.text")
+            console.log(combinatorResult)
+
+            combinatorResult.style.color = 'orange'
+        }
+
+        // querySelectorAll()
+        function selectAllElements(){
+            const allH1s = document.getElementById("first").querySelectorAll("h1")
+            console.log(allH1s)   //NodeList(4) [h1#textOne, h1, h1, h1]
+
+            console.log(allH1s[0])      //<h1 id="textOne">this is first one</h1>
+
+
+            for (let i of allH1s){
+                console.log(i)
+                i.style.backgroundColor = "blue"
+                i.style.color = "white"
+                i.style.fontSize = "2.5rem"
+            }
+        }
+    </script>
+</body>
+</html>
