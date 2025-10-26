@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Input 1</h2>
+    <input type="text" id="inputOne" ><br>
+    <p id="resultOne">helloo</p><br>
+    <button onclick="inputOneFun()">click to change input one</button>
+
+    <hr>
+
+    <h2>Input 2</h2>
+    <h1 id="inputTwo">helooooo</h1>
+    <textarea name="" id="resultTwo"></textarea><br>
+    <button onclick="inputTwoFun()">click to change input two</button>
+
+
+    <hr>
+
+    <h1>test 3</h1>
+
+    <input type="text" id="inputThree" ><br>
+    <button onclick="inputThreeFun()">click to change input one</button><br>
+    <textarea name="" id="resultThree"></textarea>
+
+
+    <hr>
+
+    <h1>video source</h1>
+
+    <video src="https://www.pexels.com/download/video/2006729/" id="video" width="300px" height="300px"></video>
+    <button onclick="videoSource()">click</button>
+
+
+    <script>
+        // test 2
+        function inputOneFun(){
+            const input1 = document.getElementById("inputOne")
+
+            document.getElementById("resultOne").textContent = input1.value
+
+
+        }
+        // test 2
+
+        function inputTwoFun(){
+
+            const input1 = document.getElementById("inputTwo")
+
+            document.getElementById("resultTwo").value = input1.textContent
+
+
+        }
+
+        // test 3
+        function inputThreeFun(){
+            document.getElementById("resultThree").value = document.getElementById("inputThree").value
+        }
+
+        // video source
+
+        function videoSource(){
+
+            let vidSrc = document.getElementById("video")
+            console.log(vidSrc.src)
+
+            vidSrc.src = "https://www.pexels.com/download/video/4115459/"
+
+            console.log(vidSrc.src)
+        }
+
+
+    </script>
+
+</body>
+</html>
