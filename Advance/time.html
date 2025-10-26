@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+</head>
+<body>
+    <script>
+
+        // setTimeout: it will return number
+        setTimeout(() => {
+            console.log("this line executing after waiting for 3 second")
+        },3000)
+
+        setTimeout(()=>{
+            console.log("this is second line")
+        },0)
+        console.log("this is third line")
+
+        // stopping timeout
+        let myTime = setTimeout(() => {
+            console.log("this line executing after waiting for 2 second")
+        },2000)
+
+        clearTimeout(myTime)
+    </script>
+
+    <!-- setIntervel -->
+
+    <!-- <button>Start</button>
+
+    <script>
+        document.querySelector("button").onclick = function(){
+            setInterval(()=>{
+                console.log("Tick")
+
+            },2000)
+        } 
+    </script>
+    -->
+        <!-- stopwatch -->
+
+    <button> start</button>
+    <button id="stop">stop</button>
+    <h1 id="disTime"></h1>
+
+    <script>
+        let myIntervel
+        document.querySelector("button").onclick = function(){
+            let count = 0
+            myIntervel = setInterval(()=>{
+            
+                // console.log(++count)
+                document.getElementById("disTime").textContent = ++count
+            },1000)
+        } 
+
+        document.getElementById("stop").onclick = function(){
+            clearInterval(myIntervel)
+        }
+    </script>
+
+    <hr>
+
+    <!-- clock -->
+
+    <h1>
+        <span id="hrs">00</span> : 
+        <span id="min">00</span> :
+        <span id="sec">00</span>
+
+    </h1>
+    
+
+    
+</body>
+</html>
