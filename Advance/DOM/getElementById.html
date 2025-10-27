@@ -42,16 +42,6 @@ DOM Commands
 
 
 
-       2. getElementByClassName()
-
-    -> accessing and manupulataing html elements by using 'class' attribute
-    -> Returns all matching class names as a node list(array)
-    -> if class name is matching returns empty array
-
-    SYNTAX:
-     ______ = document.getElementByClassName("class")
-
-
  -->
 
 <!DOCTYPE html>
@@ -121,7 +111,6 @@ DOM Commands
             // here the innerText and innerHTML is differed by the content display.
 
             wrapperEle.innerHTML += `<h5>${2+10}</h5>`      // 12
-
             wrapperEle.innerHTML += `<img src="" alt="no image">`
 
         }
@@ -133,7 +122,6 @@ DOM Commands
             const userInputEle = document.getElementById("userInp")
             console.log(userInputEle)
             console.log(userInputEle.value)
-
             document.getElementById("uname").textContent = userInputEle.value
 
         }

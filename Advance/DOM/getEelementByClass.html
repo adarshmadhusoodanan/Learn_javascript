@@ -1,0 +1,77 @@
+<!-- 
+         getElementByClassName()
+
+    -> accessing and manupulataing html elements by using 'class' attribute
+    -> Returns all matching class names as a node list(array)
+    -> if class name is matching returns empty array
+
+    SYNTAX:
+     ______ = document.getElementByClassName("class")
+     
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementByClassName</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+            
+        }
+        #finalImg{
+            width: 100%;
+            /* display: none; */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <img class="product-image" src="https://imgd.aeplcdn.com/664x374/n/bw/models/colors/bmw-select-model-light-whitem-motorsport-1716284312668.png?q=80" alt="">
+    <img class="product-image" src="https://upload.wikimedia.org/wikipedia/commons/b/b2/BMW_S_1000_XR.jpg" alt="">
+
+    <img class="product-image" src="https://imgd.aeplcdn.com/664x374/n/bw/models/colors/bmw-select-model-light-whitem-motorsport-1716284312668.png?q=80" alt="">
+
+    <img class="product-image" src="https://bsmedia.business-standard.com/_media/bs/img/article/2024-05/21/full/20240521161637.jpg" alt="">
+
+    <img class="product-image" src="https://i.pinimg.com/736x/2a/18/d8/2a18d83e31100961205e5628635dad10.jpg" alt="">
+    <br>
+
+    <button id="bmw">click</button>
+
+    <img src="" alt="" id="finalImg">
+
+    <script>
+
+        // document.querySelector("#bmw").onclick = function(){
+        //     let allImage = document.getElementsByClassName("product-image")
+
+        //     console.log(allImage)
+        //     console.log(allImage[0])
+
+        //     let output = document.querySelector("#finalImg")
+        //     output.src = allImage[0].src
+        //     output.style.display = "block"
+
+        // }
+
+        let allImages = document.getElementsByClassName("product-image")
+        let count = 0 
+        for(let i of allImages){
+            i.onmouseenter = function(){
+                document.querySelector("#finalImg").src = i.src
+            }    
+            count++
+        }
+        console.log(count+1)
+
+
+        let countTag = document.getElementsByTagName("img")
+        console.log(countTag)
+        console.log(countTag.length)
+
+    </script>
+</body>
+</html>
