@@ -45,17 +45,17 @@
 
     <script>
 
-        // document.querySelector("#bmw").onclick = function(){
-        //     let allImage = document.getElementsByClassName("product-image")
+        document.querySelector("#bmw").onclick = function(){
+            let allImage = document.getElementsByClassName("product-image")
 
-        //     console.log(allImage)
-        //     console.log(allImage[0])
+            console.log(allImage)
+            console.log(allImage[0])
 
-        //     let output = document.querySelector("#finalImg")
-        //     output.src = allImage[0].src
-        //     output.style.display = "block"
+            let output = document.querySelector("#finalImg")
+            output.src = allImage[0].src
+            output.style.display = "block"
 
-        // }
+        }
 
         let allImages = document.getElementsByClassName("product-image")
         let count = 0 
@@ -72,6 +72,33 @@
         console.log(countTag)
         console.log(countTag.length)
 
+    </script>
+
+    <hr>
+
+    <p>choose the skills</p>
+    <input type="checkbox" name="skill" id="HTML" value="HTML"><label for="">HTML</label>
+    <input type="checkbox" name="skill" id="CSS" value="CSS"><label for="">CSS</label>
+
+    <input type="checkbox" name="skill" id="PYTHON" value="PYTHON"><label for="">PYTHON</label>
+
+    <input type="checkbox" name="skill" id="JAVASCRIPT" value="JAVASCRIPT"><label for="">JAVASCRIPT</label>
+
+    <h1>selected: <h1 id="result"></h1></h1>
+    
+    <script>    
+        let allSkills = document.getElementsByName("skill")
+        console.log(allSkills)
+        let selectedSkill = []
+
+        for (let j of allSkills){
+            j.onchange = function(){
+                selectedSkill.push(j.value)
+                console.log(selectedSkill)
+                document.getElementById("result").textContent = selectedSkill.toString()
+            }
+        }
+        
     </script>
 </body>
 </html>
