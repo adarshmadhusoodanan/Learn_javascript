@@ -1,0 +1,92 @@
+<!-- 
+ promise
+
+-> promise is an object whisch eventually handles asynchronous program in JAVASCRIPT
+-> promise are the place to store the value, which will be devided in future.
+-> it will use while handling network request 
+-> async
+
+possibilities
+
+-> Promise can't switch from failure to success and success to failure
+-> promise never executes twice or more
+-> 
+
+states
+-> resolve(): it executes when promise executes successfully
+-> reject(): it returns error logics when promise fails
+
+object properties
+-> pending : initial state, o/p will be undefined
+-> fulfilled: o/p will be numbers, string or any data
+-> rejected: o/p: error
+
+
+SYNTAX:
+  let myPromise = new Promise((resolve,reject) = >{                     -----
+                    resolve()                                               |  Producing
+                    reject()                                                |  codeblock
+  })                                                                    -----
+
+  myPromise.then((res)=>{
+        console.log(res)
+        // return res.JSON()
+
+  }).catch((err)=>{
+    console.log(err)
+
+  }).finally(()=>{
+    console.log("message")
+  }) 
+    
+  
+  
+  -->
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+  </head>
+  <body>
+    <button id="btn">click here</button>
+    <script>
+        document.querySelector("#btn").onclick = function(){
+            let userLogin = new Promise((resolve,reject)=> {
+                // let isUserLoggedIn = true
+
+                // if (isUserLoggedIn){
+                //     resolve("Promise resolved successfully, user logged in.")
+                // }
+                // else{
+                //     reject("Oops...something went wrong")
+                // }
+
+                // useing seTimeout
+
+                setTimeout(()=>{
+                    let isUserLoggedIn = true
+
+                    if (isUserLoggedIn){
+                        resolve("Promise resolved successfully, user logged in.")
+                    }
+                    else{
+                        reject("Oops...something went wrong")
+                    }
+                },4000)
+            })
+
+            userLogin.then((res)=>{
+                console.log(res)
+            }).catch((err)=>{
+                console.log(err)
+            }).finally(()=>{
+                console.log("completed")
+            })
+            console.log(userLogin)
+        }
+    </script>
+  </body>
+  </html>
