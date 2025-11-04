@@ -1,0 +1,135 @@
+<!-- 
+ Storage
+ 2 types:
+
+1. local storage
+2. session storage  
+
+local storage
+-> permant storage up to 5mb data
+-> its store string in the form of key and value pair
+
+
+1. setItem()
+2. getItem()
+3. remove()
+4. clear() 
+
+session storage
+-> temprory storage to store some data about the site
+
+
+Syntax:
+
+  localStorage.setItem("key", "value")
+  localStorage.getItem("key")
+  localStorage.removeItem("key")
+  localStorage.clear()
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+</head>
+<body>
+    <!-- <input type="text" placeholder="add key" id="userKey">
+    <input type="text" placeholder="add  value" id="userValue">
+    <button id="btn" onclick="addData()">add Data</button>
+    <br><br>
+
+    <script>
+        function addData(){
+            let userKey = document.getElementById("userKey")
+            let userValue = document.getElementById("userValue")
+            let uKey = userKey.Value
+            let uValue = userValue.Value
+
+            if (uKey !=="" && uValue !==""){
+                localStorage.setItem(uValue,uKey)
+                uKey.classList.add("success")
+            }
+            else {
+                console.log("please check the fields")
+                uKey.classList.add("error")
+            }
+     }
+    </script> --> 
+
+        <form>
+
+            <input type="text" id="userKey" placeholder="Enter Key...">
+            <input type="text" id="userVal" placeholder="Enter value..">
+            <button> Add data</button>
+        
+
+        </form>
+        <hr>
+
+        <!-- getItem -->
+
+        <input type="text" id="searchKey" name="" placeholder="Enter key to Search..">
+        <button id="searchBtn">Search</button>
+        <ul id="list_val"></ul>
+
+        <!-- removeItem -->
+        <hr>
+        <input type="text" id="deleteKey" name="" placeholder="Enter key to delete..">
+        <button id="deleteBtn">Delete</button>
+        
+
+        <script>
+            // setItem()
+            document.querySelector("form").onsubmit = function(event){
+                event.preventDefault()
+                const userKey = document.getElementById("userKey").value
+                const userValue = document.getElementById("userVal").value
+
+                if(userKey !== "" && userValue !==""){
+                    if (confirm("Do you want to store the data")){
+                    localStorage.setItem(userKey,userValue)
+                    console.log("Data stored")
+                    }
+                    else{
+                        console.log("Data not stored")
+                    }
+                        
+                }
+                else{
+                    console.log("Please enter both key and value")
+                }
+            }
+
+            // getItem()
+            document.getElementById("searchBtn").onclick = function(event){
+                event.preventDefault()
+
+                // const searchKey = document.getElementById("searchKey").value
+                if (document.getElementById("searchKey").value !=="" && localStorage.getItem(document.getElementById("searchKey").value) ){
+                    document.getElementById("list_val").innerHTML += `<li> ${localStorage.getItem(document.getElementById("searchKey").value)}</li>`
+                    console.log("data is there in local storage")
+                }
+                else{
+                    console.log("data is not there")
+                }
+            }
+
+            // removeItem()
+            document.querySelector("#deleteBtn").onclick = function (event){
+                event.preventDefault()
+                if (document.getElementById("deleteKey").value !== ""&& localStorage.getItem(document.getElementById("deleteKey").value)){
+                    localStorage.removeItem(document.getElementById("deleteKey").value)
+                    console.log(document.getElementById("deleteKey").value," item deleted successfylly")
+                }
+                else{
+                    console.log("item can't find and delete")
+                }
+            }
+
+        </script>
+</body>
+</html>
