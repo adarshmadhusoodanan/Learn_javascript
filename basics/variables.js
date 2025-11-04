@@ -171,7 +171,7 @@
 
 // deference
 
-//          scope       re-init     re-
+//          scope       re-init     re-decl
 //--------------------------------------
 // var      global      yes         yes
 // let      block       yes         no

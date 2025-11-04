@@ -11,7 +11,7 @@
 // 4. Built in Function
 // 5. IIFE (Immediately invoked functions)
 // 6. higher oreder ordered functions
-// 7. call bask functions
+// 7. call back functions
 
 //--------------------------------------------------------------------
 
@@ -161,6 +161,8 @@ console.log("The floating-point number is: ", floatNum) // The floating-point nu
 (function(name){
     console.log("Hello, " + name + "!")
 })("Alice")
+
+
 
 //-------------------------------------------------------------------------------
 
