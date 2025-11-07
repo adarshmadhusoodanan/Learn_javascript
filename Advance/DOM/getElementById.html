@@ -66,10 +66,13 @@ DOM Commands
     <strong id="result"></strong>
     <hr>
     <br>
+
+    
     <button onclick="addTag()">click here to see new tag</button>
     <div id="wrapper"></div>
     <br>
     <hr>
+
     <input type="text" name="" id="userInp" placeholder="start typing">
     <button onclick="userInput()">click here to see the entered name</button>
     <p>Entered name: <strong id="uname"></strong></p>
@@ -89,13 +92,19 @@ DOM Commands
 
         function fetchText(){
             headEle = document.getElementById("head-text")
-            resutEle =document.getElementById("result")
+            resutEle = document.getElementById("result")
+            // document.getElementById("head-text").textContent= document.getElementById("head-text").textContent.toUpperCase()
+
+            // document.getElementById("result").textContent = document.getElementById("head-text").textContent.toUpperCase()
+
 
             console.log(headEle)                //<h1 id="head-text">This is content inside the tag h1</h1>
             console.log(headEle.textContent)   //This is content inside the tag h1
 
             resutEle.textContent = headEle.textContent.toUpperCase()  //THIS IS CONTENT INSIDE THE TAG H1
-            
+        
+
+
         }
 
         // we can pass new element to the web by js

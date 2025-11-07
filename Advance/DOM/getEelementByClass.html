@@ -45,17 +45,17 @@
 
     <script>
 
-        document.querySelector("#bmw").onclick = function(){
-            let allImage = document.getElementsByClassName("product-image")
+        // document.querySelector("#bmw").onclick = function(){
+        //     let allImage = document.getElementsByClassName("product-image")
 
-            console.log(allImage)
-            console.log(allImage[0])
+        //     console.log(allImage)
+        //     console.log(allImage[0])
 
-            let output = document.querySelector("#finalImg")
-            output.src = allImage[0].src
-            output.style.display = "block"
+        //     let output = document.querySelector("#finalImg")
+        //     output.src = allImage[0].src
+        //     output.style.display = "block"
 
-        }
+        // }
 
         let allImages = document.getElementsByClassName("product-image")
         let count = 0 
@@ -65,12 +65,13 @@
             }    
             count++
         }
-        console.log(count+1)
+        console.log("by count ", count+1)
 
+        // getElementsByTagName()
 
         let countTag = document.getElementsByTagName("img")
         console.log(countTag)
-        console.log(countTag.length)
+        console.log("by tag", countTag.length)
 
     </script>
 
